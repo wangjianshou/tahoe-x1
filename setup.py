@@ -4,6 +4,7 @@
 
 import importlib.util
 import os
+from glob import glob
 
 import setuptools
 from setuptools import setup
@@ -121,4 +122,10 @@ setup(
         "machine-learning",
         "deep-learning",
     ],
+    scripts=['tahoe_x1/createrna/run_inference.py'],
+    entry_points={
+        'console_scripts': [
+            'tahoe-inference=tahoe_x1.createrna.run_inference:main',
+        ],
+    },
 )

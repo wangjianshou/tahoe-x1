@@ -2,4 +2,4 @@
 from . import data, model, tokenizer, utils
 from ._version import __version__
 
-__all__ = ["__version__", "data", "model", "tokenizer", "utils"]
+__all__ = ["__version__", "data", "model", "tokenizer", "utils", "createrna"]

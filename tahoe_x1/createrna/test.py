@@ -9,16 +9,16 @@ cfg = {
     "adata_input": "stromal.h5ad",
     "model_dir": "model/3b-model",
     "adata_output": "./pred_stromal.h5ad",
-    #"drug_to_id_path": "drug_to_id_pad.json"
+    #"drug_to_id_path": "drug_to_id_pad.json" #不涉及扰物扰动，注释掉
   },
   "data": {
     "cell_type_key": "celltype_define",
     "gene_id_key": "ensembl_id",
-    #"drug_key": "drug",
+    #"drug_key": "drug", #不涉及扰物扰动，一般直接注释掉即可
   },
   "predict": {
-    "batch_size": 32,          # 入参：可调小以稳显存
-    "seq_len_dataset": 1024,   # 入参：可调小以稳显存
+    "batch_size": 32,
+    "seq_len_dataset": 1024, #基因数
     "num_workers": 8,
     "prefetch_factor": 8,
     "return_gene_embeddings": False,

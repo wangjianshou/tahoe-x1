@@ -1,0 +1,22 @@
+model_name: Tx1-3b
+
+paths:
+  adata_input: adata.h5ad #输入文件路径
+  adata_output: ./pred_adata.h5ad #输出文件路径
+  model_dir: model/3b-model #模型路径
+  # drug_to_id_path: drug_to_id_pad.json  # 不涉及扰物扰动，注释掉
+
+data:
+  cell_type_key: celltype_define
+  gene_id_key: ensembl_id
+  # drug_key: drug  # 不涉及扰物扰动，一般直接注释掉即可
+
+predict:
+  batch_size: 32
+  seq_len_dataset: 1024   # 基因数
+  num_workers: 8
+  prefetch_factor: 8
+  return_gene_embeddings: false
+  use_chem_inf: false     # 关闭化学编码设为False
+  skip_decoders: false
+
